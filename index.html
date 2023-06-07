@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>My_Portfolio</title>
+          <!-- Embed Fonts -->
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+               href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800&display=swap"
+               rel="stylesheet" />
+          <link rel="stylesheet" href="./style.css" />
+     </head>
+     <body>
+          <section class="banner">
+               <header>
+                    <a href="#!" class="logo"><span>My</span>Portfolio_</a>
+                    <ul>
+                         <li><a href="#">Home</a></li>
+                         <li><a href="#">About</a></li>
+                         <li><a href="#">Work</a></li>
+                         <li><a href="#">Contact</a></li>
+                    </ul>
+               </header>
+               <div class="content">
+                    <h3>Hey_</h3>
+                    <!-- <h2>I am <span id="text">NTienDat</span></h2> -->
+                    <h2>I am <span id="text"></span></h2>
+                    <p>
+                         ꧁༺ ❖ Name: NTienDat, age: 20, tel: +84 0374 322 747, VN ❖ ༻꧂ 
+                    </p>
+                    <button>Hire me</button>
+                    <button class="chat">
+                         <ion-icon name="chatbubbles-outline"></ion-icon>Let's Chat
+                    </button>
+               </div>
+               <img src="./img/colors.png" alt="" class="colors" />
+               <img src="./img/main1.jpg" alt="" class="main" />
+               <ul class="sci">
+                    <li>
+                         <a href="https://www.facebook.com/profile.php?id=100039343908430">
+                              <ion-icon name="logo-facebook"></ion-icon>
+                         </a>
+                    </li>
+                    <li>
+                         <a href="https://www.tiktok.com/@dalziel2k3">
+                              <ion-icon name="logo-tiktok"></ion-icon>
+                         </a>
+                    </li>
+                    <li>
+                         <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new">
+                              <ion-icon name="mail-open-outline"></ion-icon>
+                         </a>
+                    </li>
+                    <li>
+                         <a href="https://www.instagram.com/silasakeamm/">
+                              <ion-icon name="logo-instagram"></ion-icon>
+                         </a>
+                    </li>
+               </ul>
+               <div class="dayNight">
+                    <ion-icon name="moon-outline"></ion-icon>
+                    <ion-icon name="sunny-outline"></ion-icon>
+               </div>
+          </section>
+          <!-- Embed Icons -->
+          <script
+               type="module"
+               src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+          <script
+               nomodule
+               src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+          <!--/ Embed Animation-Text -->
+          <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+          <script>
+               let typingText = new Typed("#text", {
+                    strings: ["NTienDat", "Designer", "コーダー", "达"],
+                    loop: true,
+                    typeSpeed: 100,
+                    backSpeed: 50,
+                    backDelay: 1000,
+               });
+
+               let banner = document.querySelector(".banner");
+               let dayNight = document.querySelector(".dayNight");
+               dayNight.onclick = function () {
+                    banner.classList.toggle("night");
+               };
+          </script>
+     </body>
+</html>
