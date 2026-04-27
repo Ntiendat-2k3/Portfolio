@@ -1,0 +1,141 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0 8px;
+  backdrop-filter: blur(10px);
+  background: rgba(var(--bg), 0.85);
+}
+
+[data-theme="dark"] .header {
+  background: rgba(40, 44, 51, 0.9);
+}
+
+[data-theme="light"] .header {
+  background: rgba(245, 245, 245, 0.9);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.logoIcon {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.logoText {
+  color: var(--text);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navLink {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.navLink:hover, .navLink.active {
+  color: var(--text);
+}
+
+.hash {
+  color: var(--primary);
+}
+
+.terminalBtn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--text);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.terminalBtn:hover {
+  background: var(--primary-hover);
+}
+
+.mobileActions {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-120%);
+    transition: transform 0.3s;
+  }
+
+  [data-theme="dark"] .nav {
+    background: rgba(40, 44, 51, 0.98);
+  }
+
+  [data-theme="light"] .nav {
+    background: rgba(245, 245, 245, 0.98);
+  }
+
+  .navOpen {
+    transform: translateY(0);
+  }
+
+  .mobileActions {
+    display: flex;
+  }
+
+  /* Hide desktop theme toggle inside nav on mobile */
+  .nav > :global(.toggle) {
+    display: none;
+  }
+}

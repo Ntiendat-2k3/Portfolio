@@ -1,0 +1,67 @@
+.layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.text {
+  flex: 1;
+  max-width: 500px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.card {
+  border: 1px solid var(--border);
+  padding: 16px;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  backdrop-filter: blur(4px);
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.contactItem:hover {
+  color: var(--text);
+}
+
+.contactItem svg {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Contact.module.css */
+.icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+}

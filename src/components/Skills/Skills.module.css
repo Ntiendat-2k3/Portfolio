@@ -1,0 +1,39 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.block {
+  border: 1px solid var(--border);
+  min-width: 180px;
+  flex: 1;
+  background: var(--bg-card);
+  backdrop-filter: blur(4px);
+}
+
+.blockTitle {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  padding: 8px 16px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 16px 16px;
+}
+
+.tag {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
