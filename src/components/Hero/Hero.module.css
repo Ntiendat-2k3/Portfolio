@@ -154,32 +154,6 @@
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 8px 24px rgba(199, 120, 221, 0.25));
-  animation: waveHello 3s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-
-@keyframes waveHello {
-  0% {
-    transform: rotate(0deg);
-  }
-  6% {
-    transform: rotate(-8deg);
-  }
-  12% {
-    transform: rotate(8deg);
-  }
-  18% {
-    transform: rotate(-6deg);
-  }
-  24% {
-    transform: rotate(6deg);
-  }
-  30% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
 
 [data-theme="light"] .bgImage {

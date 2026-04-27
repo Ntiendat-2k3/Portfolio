@@ -179,7 +179,8 @@ export async function fetchFileTree(
 }
 
 export async function fetchFileContent(downloadUrl: string): Promise<string> {
-  const res = await fetch(downloadUrl, { headers: getHeaders() });
+  // Avoid CORS preflight issues by not sending Authorization header to raw.githubusercontent.com
+  const res = await fetch(downloadUrl);
   if (!res.ok) throw new Error('Failed to fetch file content');
   return res.text();
 }

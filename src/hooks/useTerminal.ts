@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { OutputLine } from '@/types';
 import { CommandRegistry } from '@/engine/CommandRegistry';
 import { CommandParser } from '@/engine/CommandParser';
@@ -17,7 +17,11 @@ import {
 } from '@/engine/commands';
 
 export function useTerminal() {
-  const [output, setOutput] = useState<OutputLine[]>([]);
+  const [output, setOutput] = useState<OutputLine[]>([
+    line(c.purple('Welcome to Terminal Portfolio v2.0.0')),
+    line(c.gray('Type "help" to see available commands.')),
+    blank()
+  ]);
   const [input, setInput] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -37,15 +41,6 @@ export function useTerminal() {
 
   const history = useCommandHistory();
   const autocomplete = useAutocomplete(registry);
-
-  useEffect(() => {
-    // Initial banner
-    setOutput([
-      line(c.purple('Welcome to Terminal Portfolio v2.0.0')),
-      line(c.gray('Type "help" to see available commands.')),
-      blank()
-    ]);
-  }, []);
 
   const handleExecute = async (rawInput: string) => {
     const trimmed = rawInput.trim();

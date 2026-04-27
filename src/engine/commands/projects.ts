@@ -22,13 +22,13 @@ export const projectsCommand: Command = {
       
       if (args.length > 0) {
         const query = args[0].toLowerCase();
-        const repo = repos.find((r: any) => r.name.toLowerCase().includes(query));
+        const repo = repos.find((r: { name: string }) => r.name.toLowerCase().includes(query));
         
         if (!repo) {
           return [
             blank(),
             line(c.red(`Project "${args[0]}" not found in recent repos.`)),
-            line(`${c.gray('Available:')} ${repos.map((r: any) => c.cyan(r.name)).join(' · ')}`),
+            line(`${c.gray('Available:')} ${repos.map((r: { name: string }) => c.cyan(r.name)).join(' · ')}`),
             blank(),
           ];
         }
@@ -50,7 +50,7 @@ export const projectsCommand: Command = {
       output.push(...header('Recent Projects from GitHub'));
       output.push(blank());
 
-      repos.forEach((p: any, i: number) => {
+      repos.forEach((p: { name: string; stargazers_count: number; description: string | null; language: string | null }, i: number) => {
         output.push(line(
           `  ${c.green('✓')} ${c.cyan(p.name.padEnd(28))} ${p.stargazers_count ? c.yellow(`★ ${p.stargazers_count}`) : ''}`
         ));

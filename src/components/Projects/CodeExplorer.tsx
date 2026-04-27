@@ -82,6 +82,7 @@ export const CodeExplorer = ({ repoName, isOpen, onClose }: Props) => {
 
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       loadTree('');
       setPathStack([]);
       setSelectedFile(null);

@@ -40,6 +40,7 @@ export interface PortfolioData {
     email: string;
     github: string;
     linkedin: string;
+    zalo: string;
   };
   skills: SkillGroup[];
   projects: Project[];
