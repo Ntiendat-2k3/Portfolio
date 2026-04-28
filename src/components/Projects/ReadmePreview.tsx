@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { createPortal } from 'react-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import { fetchReadme } from '../../services/github';
-import styles from './Projects.module.css';
+import { useState } from "react";
+import { createPortal } from "react-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { fetchReadme } from "../../services/github";
+import styles from "./Projects.module.css";
 
 interface Props {
   repoName: string;
@@ -28,7 +28,7 @@ export const ReadmePreview = ({ repoName }: Props) => {
     <>
       {/* Small button in card */}
       <button className={styles.readmeBtn} onClick={handleOpen}>
-        📝 README
+        📝 Mô tả dự án
       </button>
 
       {/* Modal portal — renders at document.body, always centered in viewport */}
@@ -47,7 +47,7 @@ export const ReadmePreview = ({ repoName }: Props) => {
                 initial={{ scale: 0.9, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                transition={{ type: 'spring', damping: 25 }}
+                transition={{ type: "spring", damping: 25 }}
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Header */}
@@ -71,7 +71,9 @@ export const ReadmePreview = ({ repoName }: Props) => {
                       Đang tải README...
                     </div>
                   ) : readme ? (
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{readme}</ReactMarkdown>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {readme}
+                    </ReactMarkdown>
                   ) : (
                     <div className={styles.readmeLoading}>
                       Repo này chưa có README.md
@@ -82,7 +84,7 @@ export const ReadmePreview = ({ repoName }: Props) => {
             </motion.div>
           )}
         </AnimatePresence>,
-        document.body
+        document.body,
       )}
     </>
   );
