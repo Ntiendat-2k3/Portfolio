@@ -11,7 +11,15 @@ export const Footer: React.FC = () => {
             <span className={styles.logoIcon}>D</span>
             <span className={styles.logoText}>Dat</span>
           </div>
-          <p className={styles.email}>nguyentiendatg2003@gmail.com</p>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyentiendatg2003@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.email}
+            style={{ display: "block", textDecoration: "none" }}
+          >
+            nguyentiendatg2003@gmail.com
+          </a>
           <p className={styles.tagline}>Frontend Developer & Web Creator</p>
         </div>
 
@@ -26,13 +34,17 @@ export const Footer: React.FC = () => {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/nguyentiendat"
+              href="https://www.linkedin.com/in/%C4%91%E1%BA%A1t-nguy%E1%BB%85n-23b142399/"
               target="_blank"
               rel="noreferrer"
             >
               <FaLinkedin />
             </a>
-            <a href="mailto:nguyentiendatg2003@gmail.com">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyentiendatg2003@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaEnvelope />
             </a>
           </div>

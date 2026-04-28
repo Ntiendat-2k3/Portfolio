@@ -12,7 +12,7 @@ export const contactCommand: Command = {
     blank(),
     ...header('Get in touch'),
     blank(),
-    line(`  ${c.green('Email')}    ${c.link(d.contact.email, `mailto:${d.contact.email}`)}`),
+    line(`  ${c.green('Email')}    ${c.link(d.contact.email, `https://mail.google.com/mail/?view=cm&fs=1&to=${d.contact.email}`)}`),
     line(`  ${c.green('GitHub')}   ${c.link('Ntiendat-2k3', `https://${d.contact.github}`)}`),
     line(`  ${c.green('LinkedIn')} ${c.link('Đạt Nguyễn', `https://${d.contact.linkedin}`)}`),
     line(`  ${c.green('Zalo')}     ${c.link(d.contact.zalo, `https://zalo.me/${d.contact.zalo}`)}`),

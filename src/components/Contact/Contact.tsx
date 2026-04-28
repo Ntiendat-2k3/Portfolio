@@ -38,7 +38,9 @@ export const Contact: React.FC = () => {
             <h3 className={styles.cardTitle}>Liên hệ tôi tại đây</h3>
             <div className={styles.contactList}>
               <a
-                href="mailto:nguyentiendatg2003@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyentiendatg2003@gmail.com"
+                target="_blank"
+                rel="noreferrer"
                 className={styles.contactItem}
               >
                 <img src={gmailIcon} alt="Gmail icon" className={styles.icon} />
